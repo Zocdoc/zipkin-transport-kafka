@@ -22,7 +22,7 @@ describe('Kafka transport - unit tests', () => {
         kafkaLogger.close();
     });
 
-    it('should start KafkaLogger successfully', function(done) {
+    it('Should start KafkaLogger successfully', function(done) {
         this.timeout(60 * 1000);
 
         const handleError = (err) => {
@@ -48,7 +48,7 @@ describe('Kafka transport - unit tests', () => {
         });
     });
 
-    it('should send data to KafkaLogger successfully', function(done) {
+    it('Should send span to KafkaLogger successfully without error', function(done) {
         this.timeout(60 * 1000);
 
         const handleError = (err) => {
@@ -72,7 +72,7 @@ describe('Kafka transport - unit tests', () => {
     });
 
 
-    it('should throw errors gracefully when Kafka-Node fails to connect', function(done) {
+    it('Should throw errors gracefully when Kafka-Node fails to connect', function(done) {
         this.timeout(60 * 1000);
 
         const handleError = (err) => {
