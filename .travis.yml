@@ -15,7 +15,6 @@ jobs:
     - yarn lint
     - yarn test
   - stage: deploy
-    if: type != pull_request
     env: NAME="Deploy on master only"
     script:
     - npm run lerna-clean
