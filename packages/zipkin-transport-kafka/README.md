@@ -1,5 +1,9 @@
 # Zipkin-transport-kafka
 
+**This is a fork of the openzipkin module, which has an unhandled error in promise bug: https://github.com/openzipkin/zipkin-js/pull/213
+
+Until they release a new version with this fix, we will use this fork.**
+
 This is a module that sends Zipkin trace data from zipkin-js to Kafka.
 
 ## Usage:

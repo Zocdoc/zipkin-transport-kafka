@@ -1,5 +1,5 @@
 {
-  "name": "zipkin-transport-kafka",
+  "name": "@zocdoc/zipkin-transport-kafka",
   "version": "0.12.0",
   "description": "Transports Zipkin trace data via Kafka to the collector",
   "main": "lib/index.js",
