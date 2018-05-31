@@ -4,10 +4,15 @@ node_js:
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash -s -- --version 0.27.5
   - export PATH="$HOME/.yarn/bin:$PATH"
+  - npm install @zocdoc/travis@latest --global
+after_success:
+  - travis-npm-publish
 script:
   - yarn lint
   - yarn test
-
+  - npm run lerna-clean
+  - npm run lerna-build
+  - npm run lerna-publish
 services:
   - memcached
   - redis
