@@ -23,6 +23,7 @@ jobs:
     script:
     - npm run lerna-clean
     - npm run lerna-build
+    - git checkout master
     - npm run lerna-publish
 services:
   - memcached
