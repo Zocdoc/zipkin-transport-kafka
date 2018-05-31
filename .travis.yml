@@ -8,7 +8,6 @@ before_install:
   - export PATH="$HOME/.yarn/bin:$PATH"
   - npm config set @zocdoc:registry $NPM_FEED
   - npm config set //npm.zocdoc-ci.com/:_authToken "\${NPM_TOKEN}"
-  - npm set progress=false
   - npm install @zocdoc/travis@latest --global
 after_success:
   - travis-npm-publish
