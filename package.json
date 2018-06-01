@@ -3,7 +3,7 @@
   "private": true,
   "license": "Apache-2.0",
   "dependencies": {
-    "lerna": "^2.1.2",
+    "lerna": "^2.11.0",
     "yarn": "^1.3.2"
   },
   "scripts": {
@@ -12,7 +12,8 @@
     "lerna-clean": "lerna clean --yes",
     "lerna-build": "lerna run build",
     "lerna-publish": "lerna exec --scope @zocdoc/zipkin-transport-kafka -- npx semantic-release",
-    "postinstall": "yarn lerna-build --silent"
+    "postinstall": "yarn lerna-build --silent",
+    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
   "repository": "https://github.com/zocdoc/zipkin-js",
   "publishConfig": {
