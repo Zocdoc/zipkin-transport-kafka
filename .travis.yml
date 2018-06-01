@@ -11,12 +11,8 @@ script:
   - yarn lint
   - yarn test
 after_success:
-  - |
-      if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-        npm run lerna-clean
-        npm run lerna-build
-        npm run lerna-publish
-      fi
+  - travis-deploy-once --pro "npm run lerna-publish"
+
 services:
   - memcached
   - redis

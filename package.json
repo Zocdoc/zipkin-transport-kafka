@@ -7,6 +7,7 @@
     "test": "mocha --require babel-register",
     "lerna-clean": "lerna clean --yes",
     "lerna-build": "lerna run build",
+    "prelerna-publish": "npm run lerna-clean && npm run lerna-build",
     "lerna-publish": "npm run semantic-release",
     "postinstall": "yarn lerna-build --silent",
     "semantic-release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post"
