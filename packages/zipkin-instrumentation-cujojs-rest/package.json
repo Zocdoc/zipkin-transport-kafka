@@ -10,7 +10,7 @@
   },
   "author": "OpenZipkin <openzipkin.alt@gmail.com>",
   "license": "Apache-2.0",
-  "repository": "https://github.com/openzipkin/zipkin-js",
+  "repository": "https://github.com/zocdoc/zipkin-js",
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "express": "^4.13.4",
