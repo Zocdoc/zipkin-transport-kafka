@@ -13,12 +13,12 @@ script:
   - yarn lint
   - yarn test
 after_success:
-  - |
-      if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-        npm run lerna-clean
-        npm run lerna-build
-        npm run lerna-publish
-      fi
+  #- |
+  #    if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
+  - npm run lerna-clean
+  - npm run lerna-build
+  - npm run lerna-publish
+  #    fi
 services:
   - memcached
   - redis
