@@ -17,7 +17,7 @@ after_success:
   #    if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
   - npm run lerna-clean
   - npm run lerna-build
-  - TRAVIS_JOB_NUMBER=JB_TEST.1 npm run lerna-publish
+  - TRAVIS_JOB_NUMBER="JB_TEST.1" npm run lerna-publish
   #    fi
 services:
   - memcached
