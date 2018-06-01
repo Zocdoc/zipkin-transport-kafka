@@ -15,7 +15,7 @@ script:
 after_success:
   - npm run lerna-clean
   - npm run lerna-build
-  - npm run lerna-publish
+  - npx lerna exec -- npm publish
 services:
   - memcached
   - redis
