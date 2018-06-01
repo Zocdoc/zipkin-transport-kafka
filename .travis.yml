@@ -14,7 +14,7 @@ script:
   - yarn lint
   - yarn test
 after_success:
-  - travis-deploy-once --pro "npm run lerna-publish"
+  - npx travis-deploy-once --pro "npm run lerna-publish"
 
 services:
   - memcached
