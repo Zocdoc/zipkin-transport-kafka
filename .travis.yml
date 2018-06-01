@@ -15,9 +15,9 @@ script:
 after_success:
   - |
       if [ "$TRAVIS_BRANCH" = "master" ] && [ "$TRAVIS_PULL_REQUEST" = "false" ]; then
-        npm run lerna-clean
-        npm run lerna-build
-        npm run lerna-publish
+        - npm run lerna-clean
+        - npm run lerna-build
+        - npm run lerna-publish
       fi
 services:
   - memcached

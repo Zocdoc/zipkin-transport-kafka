@@ -9,9 +9,11 @@
     "test": "mocha --require ../../test/helper.js",
     "prepublish": "npm run build"
   },
-  "author": "Openzipkin <openzipkin.alt@gmail.com>",
   "license": "Apache-2.0",
-  "repository": "https://github.com/openzipkin/zipkin-js",
+  "repository": "https://github.com/zocdoc/zipkin-js",
+  "publishConfig": {
+      "registry": "https://npm.zocdoc-ci.com/"
+  },
   "dependencies": {
     "@types/kafka-node": "^2.0.3",
     "kafka-node": "^2.2.0",
