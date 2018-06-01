@@ -1,5 +1,5 @@
 {
-  "name": "zipkin-js",
+  "name": "@zocdoc/zipkin-js",
   "private": true,
   "license": "Apache-2.0",
   "dependencies": {
@@ -11,10 +11,13 @@
     "test": "mocha --require babel-register",
     "lerna-clean": "lerna clean --yes",
     "lerna-build": "lerna run build",
-    "lerna-publish": "lerna publish --yes --skip-git --conventional-commits",
+    "lerna-publish": "lerna publish --yes --skip-git --conventional-commits --registry=https://npm.zocdoc-ci.com/",
     "postinstall": "yarn lerna-build --silent"
   },
   "repository": "https://github.com/zocdoc/zipkin-js",
+  "publishConfig": {
+      "registry": "https://npm.zocdoc-ci.com/"
+  },
   "devDependencies": {
     "babel-cli": "^6.23.0",
     "babel-preset-es2015": "^6.18.0",

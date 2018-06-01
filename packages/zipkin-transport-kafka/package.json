@@ -11,6 +11,9 @@
   },
   "license": "Apache-2.0",
   "repository": "https://github.com/zocdoc/zipkin-js",
+  "publishConfig": {
+      "registry": "https://npm.zocdoc-ci.com/"
+  },
   "dependencies": {
     "@types/kafka-node": "^2.0.3",
     "kafka-node": "^2.2.0",
