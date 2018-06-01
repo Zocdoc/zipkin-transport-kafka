@@ -1,6 +1,7 @@
 const kafka = require('kafka-node');
 const THRIFT = require('zipkin-encoder-thrift');
 
+
 module.exports = class KafkaLogger {
   constructor(options) {
     const clientDefaults = {
