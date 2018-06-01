@@ -71,7 +71,6 @@ describe('Kafka transport - unit tests', () => {
     });
   });
 
-
   it('Should throw errors gracefully when Kafka-Node fails to connect', function(done) {
     this.timeout(60 * 1000);
 
