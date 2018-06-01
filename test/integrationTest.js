@@ -1,8 +1,11 @@
 /* eslint-disable no-console */
+const debug = require('debug');
 const kafka = require('kafka-node');
 const {Tracer, BatchRecorder, Annotation, ExplicitContext} = require('zipkin');
 const KafkaLogger = require('../src/KafkaLogger');
 const makeKafkaServer = require('kafka-please');
+
+const log = debug('test');
 
 function waitPromise(length) {
   return new Promise((resolve) => {
@@ -49,13 +52,13 @@ describe('Kafka transport - integration test', () => {
       }
 
       return new Promise(resolve => {
-        console.log('creating topic...');
+        log('creating topic...');
         producer.on('ready', () => {
           producer.createTopics(['zipkin'], true, err => {
             if (err) {
               finish(err);
             } else {
-              console.log('topic was created');
+              log('topic was created');
               resolve();
             }
           });
@@ -73,18 +76,18 @@ describe('Kafka transport - integration test', () => {
           }
         );
         consumer.on('message', message => {
-          console.log('Received Zipkin data from Kafka');
+          log('Received Zipkin data from Kafka');
           expect(message.topic).to.equal('zipkin');
           expect(message.value).to.contain('http://example.com');
           consumer.close(true, finish);
         });
 
         client.on('error', err => {
-          console.log('client error', err);
+          log('client error', err);
           finish(err);
         });
         consumer.on('error', err => {
-          console.log('consumer error', err);
+          log('consumer error', err);
           consumer.close(true, () => finish(err));
         });
 
@@ -149,13 +152,13 @@ describe('Kafka transport - integration test', () => {
       }
 
       return new Promise(resolve => {
-        console.log('creating topic...');
+        log('creating topic...');
         producer.on('ready', () => {
           producer.createTopics(['zipkin'], true, err => {
             if (err) {
               finish(err);
             } else {
-              console.log('topic was created');
+              log('topic was created');
               resolve();
             }
           });
@@ -173,18 +176,18 @@ describe('Kafka transport - integration test', () => {
           }
         );
         consumer.on('message', message => {
-          console.log('Received Zipkin data from Kafka');
+          log('Received Zipkin data from Kafka');
           expect(message.topic).to.equal('zipkin');
           expect(message.value).to.contain('http://example.com');
           consumer.close(true, finish);
         });
 
         client.on('error', err => {
-          console.log('client error', err);
+          log('client error', err);
           finish(err);
         });
         consumer.on('error', err => {
-          console.log('consumer error', err);
+          log('consumer error', err);
           consumer.close(true, () => finish(err));
         });
 

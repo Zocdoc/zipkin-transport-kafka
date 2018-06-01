@@ -1,47 +1,39 @@
 {
-  "name": "@zocdoc/zipkin-js",
-  "private": true,
-  "license": "Apache-2.0",
+  "name": "@zocdoc/zipkin-transport-kafka",
+  "description": "Transports Zipkin trace data via Kafka to the collector",
+  "main": "lib/index.js",
+  "types": "index.d.ts",
   "scripts": {
-    "lint": "eslint packages",
-    "test": "mocha --require babel-register",
-    "lerna-clean": "lerna clean --yes",
-    "lerna-build": "lerna run build",
-    "prelerna-publish": "npm run lerna-clean && npm run lerna-build",
-    "lerna-publish": "npm run semantic-release",
-    "postinstall": "yarn lerna-build --silent",
-    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release perform"
+    "build": "babel src -d lib",
+    "test": "mocha --require ./test/helper.js",
+    "prepublish": "npm run build"
   },
+  "license": "Apache-2.0",
   "repository": "https://github.com/zocdoc/zipkin-js",
+  "publishConfig": {
+    "registry": "https://npm.zocdoc-ci.com/"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
   "dependencies": {
-    "lerna": "^2.11.0",
-    "yarn": "^1.3.2"
+    "@types/kafka-node": "^2.0.3",
+    "kafka-node": "^2.2.0",
+    "zipkin-encoder-thrift": "^0.12.0"
   },
   "devDependencies": {
     "babel-cli": "^6.23.0",
-    "babel-preset-es2015": "^6.18.0",
-    "babel-register": "^6.23.0",
-    "chai": "^3.5.0",
+    "babel-preset-es2015": "^6.24.1",
     "commitizen": "^2.10.1",
-    "cz-lerna-changelog": "^1.2.1",
-    "eslint": "^2.10.0",
-    "eslint-config-airbnb": "^9.0.0",
-    "eslint-plugin-import": "^1.6.0",
-    "eslint-plugin-jsx-a11y": "^1.0.2",
-    "eslint-plugin-react": "^5.0.1",
-    "lerna-semantic-release": "^9.1.0",
-    "lolex": "^1.5.1",
+    "cz-conventional-changelog": "^2.1.0",
+    "debug": "^3.1.0",
+    "kafka-please": "^1.0.1",
     "mocha": "^3.2.0",
+    "semantic-release": "^15.5.0",
     "sinon": "^1.17.6",
-    "travis-deploy-once": "^5.0.0"
-  },
-  "workspaces": [
-    "packages/*"
-  ],
-  "config": {
-    "commitizen": {
-      "path": "./node_modules/cz-lerna-changelog"
-    },
-    "registry": "https://npm.zocdoc-ci.com/"
+    "travis-deploy-once": "^5.0.0",
+    "zipkin": "^0.12.0"
   }
 }
