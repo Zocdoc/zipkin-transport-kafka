@@ -2,7 +2,11 @@
 
 **This is a fork of the openzipkin module, which has an unhandled error in promise bug: https://github.com/openzipkin/zipkin-js/pull/213
 
-Until they release a new version with this fix, we will use this fork.**
+This bug is in the zipkin-transport-kafka module.
+
+Until they release a new version with this fix, we will use this fork.
+
+If further edits to this fork are made in the zipkin-transport-kafka module, pushes can be made directly. If edits need to be made to other submodules, the lerna-publish script within package.json must be written such that lerna identifies which packages have been changed, and which are not. This requires removing the --scope argument.**
 
 This is a module that sends Zipkin trace data from zipkin-js to Kafka.
 
