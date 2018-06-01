@@ -11,9 +11,8 @@
     "test": "mocha --require babel-register",
     "lerna-clean": "lerna clean --yes",
     "lerna-build": "lerna run build",
-    "lerna-publish": "lerna exec --scope @zocdoc/zipkin-transport-kafka -- npx semantic-release",
-    "postinstall": "yarn lerna-build --silent",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "lerna-publish": "lerna exec --scope @zocdoc/zipkin-transport-kafka -- npm publish",
+    "postinstall": "yarn lerna-build --silent"
   },
   "repository": "https://github.com/zocdoc/zipkin-js",
   "publishConfig": {
