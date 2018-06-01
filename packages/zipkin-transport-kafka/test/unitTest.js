@@ -93,7 +93,7 @@ describe('Kafka transport - unit tests', () => {
     });
 
     setTimeout(() => {
-      // Errors should be called for producer, client, and failed logSpan
+      // Errors should be called for producer & client
       sinon.assert.calledTwice(errorSpy);
       done();
     }, 2000);
