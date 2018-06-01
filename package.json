@@ -10,12 +10,9 @@
     "prelerna-publish": "npm run lerna-clean && npm run lerna-build",
     "lerna-publish": "npm run semantic-release",
     "postinstall": "yarn lerna-build --silent",
-    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release perform && lerna-semantic-release post"
+    "semantic-release": "lerna-semantic-release pre && lerna-semantic-release perform"
   },
   "repository": "https://github.com/zocdoc/zipkin-js",
-  "publishConfig": {
-    "registry": "https://npm.zocdoc-ci.com/"
-  },
   "dependencies": {
     "lerna": "^2.11.0",
     "yarn": "^1.3.2"
@@ -44,6 +41,7 @@
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-lerna-changelog"
-    }
+    },
+    "registry": "https://npm.zocdoc-ci.com/"
   }
 }
