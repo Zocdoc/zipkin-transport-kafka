@@ -11,7 +11,7 @@
     "test": "mocha --require babel-register",
     "lerna-clean": "lerna clean --yes",
     "lerna-build": "lerna run build",
-    "lerna-publish": "lerna publish --yes --cd-version=patch --skip-git --canary --registry=https://npm.zocdoc-ci.com/",
+    "lerna-publish": "lerna exec -- npm publish",
     "postinstall": "yarn lerna-build --silent"
   },
   "repository": "https://github.com/zocdoc/zipkin-js",
