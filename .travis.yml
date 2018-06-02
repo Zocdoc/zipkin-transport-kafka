@@ -12,8 +12,7 @@ branches:
 before_install:
   - npm config set //$NPM_FEED/:_authToken $NPM_TOKEN
 script:
-  - npm run lint
-  - npm run test
+  - npm test
 after_success:
   - npx travis-deploy-once --pro "npm run build && npx semantic-release"
 
