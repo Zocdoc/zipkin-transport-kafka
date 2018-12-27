@@ -11,6 +11,9 @@ branches:
     - master
 before_install:
   - npm config set //$NPM_FEED/:_authToken $NPM_TOKEN
+  - npm config set //artifactory.zocdoc-ci.com/artifactory/api/npm/npm/:_password $ARTIFACTORY_PASSWORD
+  - npm config set //artifactory.zocdoc-ci.com/artifactory/api/npm/npm/:username travis-npm
+  - npm config set //artifactory.zocdoc-ci.com/artifactory/api/npm/npm/:email cirobot1@zocdoc.com
 script:
   - npm test
 after_success:

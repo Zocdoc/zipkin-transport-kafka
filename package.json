@@ -11,7 +11,7 @@
   "license": "Apache-2.0",
   "repository": "https://github.com/zocdoc/zipkin-js",
   "publishConfig": {
-    "registry": "https://npm.zocdoc-ci.com/"
+    "registry": "https://artifactory.zocdoc-ci.com/artifactory/api/npm/npm/"
   },
   "config": {
     "commitizen": {
